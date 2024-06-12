@@ -3,22 +3,22 @@
     {
       "id": "ce2e2728-abbb-44ec-b1fb-065a1dcaba57",
       "content": "getting started with a new day",
-      "completed": true
+      "completed": false
     },
     {
       "id": "4222e1ea-fc2f-4ac0-a8fa-e26178fa8f74",
       "content": "another quick note",
-      "completed": false
+      "completed": true
     },
     {
       "id": "e62a1565-59cb-4716-b3e2-a3cb3582e592",
       "content": "yet another note",
-      "completed": false
+      "completed": true
     },
     {
       "id": "faa74ae8-e012-48d1-bd33-4fde82edcafa",
       "content": "test the note feature",
-      "completed": true
+      "completed": false
     },
     {
       "id": "f4e96886-9cd9-4328-8f92-1a4acdc0dace",
@@ -28,12 +28,12 @@
     {
       "id": "02024c1d-bc1f-4757-8f80-3ab62be6350c",
       "content": "fix hook error",
-      "completed": false
+      "completed": true
     },
     {
       "id": "58d197c3-3673-41c3-8aa7-f7d18f4a87e7",
       "content": "try another fix",
-      "completed": false
+      "completed": true
     },
     {
       "id": "fa4c5c96-50e6-41ae-a5c5-721d3a9dbaed",
@@ -53,17 +53,32 @@
     {
       "id": "8b3a4d9c-baaf-4cc7-b766-a03b705194f0",
       "content": "edit notes",
-      "completed": false
+      "completed": true
     },
     {
       "id": "219b1725-ad40-43c1-827b-58539aa480ce",
       "content": "where is the error?",
-      "completed": false
+      "completed": true
     },
     {
       "id": "eae7a77c-4ffd-4706-a9a7-4a57718fb2ef",
       "content": "show me the error!",
+      "completed": false
+    },
+    {
+      "id": "ab54f6be-bf8d-4980-9038-c8b19d5a4e7b",
+      "content": "complete some notes",
       "completed": true
+    },
+    {
+      "id": "33ad6b75-4020-444c-8162-da5384755976",
+      "content": "take a nap",
+      "completed": true
+    },
+    {
+      "id": "311d3649-7543-4fc2-a598-691a03f149f4",
+      "content": "knlkkkl",
+      "completed": false
     }
   ]
 }
