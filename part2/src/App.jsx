@@ -2,14 +2,28 @@ import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
+const NoteForm = ({ newNote, handleNewNote, addNote }) => {
+  return (
+    <input
+      type="text"
+      value={newNote}
+      onChange={handleNewNote}
+      onKeyDown={addNote}
+      placeholder="Enter note and press 'ENTER'"
+    />
+  );
+};
+
 const Note = ({ note }) => {
   const [isCompleted, setIsCompleted] = useState(false);
-  const [totalCompleted, setTotalCompleted] = useState([]);
 
   const handleCheckboxPress = () => {
     note.completed = !note.completed;
     setIsCompleted(note.completed);
-    setTotalCompleted((totalCompleted) => totalCompleted + 1);
+
+    axios.patch(`http://localhost:3001/notes/${note.id}`, {
+      completed: note.completed,
+    });
   };
 
   return (
@@ -22,15 +36,39 @@ const Note = ({ note }) => {
   );
 };
 
+const Notes = ({ notes }) => {
+  return (
+    <>
+      <ul>
+        {notes.map((note) => {
+          return <Note key={note.id} note={note} />;
+        })}
+      </ul>
+    </>
+  );
+};
+
+const Statistics = ({ notes }) => {
+  const completedNotes = notes.filter((note) => note.completed);
+  const unCompletedNotes = notes.filter((note) => !note.completed);
+
+  return (
+    <div className="stats">
+      <p>Completed: {completedNotes.length}</p>
+      <p>Uncompleted: {unCompletedNotes.length}</p>
+    </div>
+  );
+};
+
 const App = () => {
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState("");
 
   useEffect(() => {
     axios.get("http://localhost:3001/notes").then((response) => {
-      setNotes(notes => notes.concat(response.data));
+      setNotes(response.data);
     });
-  }, []);
+  });
 
   const addNote = (event) => {
     if (event.key === "Enter") {
@@ -39,8 +77,12 @@ const App = () => {
         content: newNote,
         completed: false,
       };
-      setNotes((notes) => notes.concat(noteObject));
-      setNewNote("");
+      axios.post("http://localhost:3001/notes", noteObject).then((response) => {
+        if (response.status === 201) {
+          setNotes((notes) => notes.concat(response.data));
+          setNewNote("");
+        }
+      });
     }
   };
 
@@ -56,18 +98,13 @@ const App = () => {
   return (
     <>
       <section className="mainContent">
-        <input
-          type="text"
-          value={newNote}
-          onChange={handleNewNote}
-          onKeyDown={addNote}
-          placeholder="Enter note and press 'ENTER'"
+        <Statistics notes={notes} />
+        <NoteForm
+          newNote={newNote}
+          addNote={addNote}
+          handleNewNote={handleNewNote}
         />
-        <ul>
-          {notes.map((note) => {
-            return <Note key={note.id} note={note} />;
-          })}
-        </ul>
+        <Notes notes={notes} />
       </section>
     </>
   );

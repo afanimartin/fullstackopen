@@ -26,6 +26,10 @@ input[type="checkbox"]{
   margin: 100px auto;
 }
 
-.note {
+.note, .stats {
   display: flex;
+}
+
+.stats {
+  justify-content: space-between;
 }

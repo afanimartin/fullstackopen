@@ -1,19 +1,69 @@
 {
   "notes": [
     {
-      "id": 1,
-      "content": "HTML is easy",
-      "important": true
+      "id": "ce2e2728-abbb-44ec-b1fb-065a1dcaba57",
+      "content": "getting started with a new day",
+      "completed": true
     },
     {
-      "id": 2,
-      "content": "Browser can execute only JavaScript",
-      "important": false
+      "id": "4222e1ea-fc2f-4ac0-a8fa-e26178fa8f74",
+      "content": "another quick note",
+      "completed": false
     },
     {
-      "id": 3,
-      "content": "GET and POST are the most important methods of HTTP protocol",
-      "important": true
+      "id": "e62a1565-59cb-4716-b3e2-a3cb3582e592",
+      "content": "yet another note",
+      "completed": false
+    },
+    {
+      "id": "faa74ae8-e012-48d1-bd33-4fde82edcafa",
+      "content": "test the note feature",
+      "completed": true
+    },
+    {
+      "id": "f4e96886-9cd9-4328-8f92-1a4acdc0dace",
+      "content": "check the feature",
+      "completed": false
+    },
+    {
+      "id": "02024c1d-bc1f-4757-8f80-3ab62be6350c",
+      "content": "fix hook error",
+      "completed": false
+    },
+    {
+      "id": "58d197c3-3673-41c3-8aa7-f7d18f4a87e7",
+      "content": "try another fix",
+      "completed": false
+    },
+    {
+      "id": "fa4c5c96-50e6-41ae-a5c5-721d3a9dbaed",
+      "content": "another one",
+      "completed": false
+    },
+    {
+      "id": "aa0c7548-5db3-40ce-b026-54fc8510d5d5",
+      "content": "yes it works!",
+      "completed": false
+    },
+    {
+      "id": "3ccc39f0-5a92-4de8-a676-1cbcba6de5ce",
+      "content": "get started",
+      "completed": true
+    },
+    {
+      "id": "8b3a4d9c-baaf-4cc7-b766-a03b705194f0",
+      "content": "edit notes",
+      "completed": false
+    },
+    {
+      "id": "219b1725-ad40-43c1-827b-58539aa480ce",
+      "content": "where is the error?",
+      "completed": false
+    },
+    {
+      "id": "eae7a77c-4ffd-4706-a9a7-4a57718fb2ef",
+      "content": "show me the error!",
+      "completed": true
     }
   ]
 }
