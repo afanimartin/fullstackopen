@@ -1,11 +1,11 @@
 const Stats = ({ notes }) => {
-  const completedNotes = notes.filter((note) => note.completed);
-  const unCompletedNotes = notes.filter((note) => !note.completed);
+  const completedNotes = notes.filter((note) => note.isComplete);
+  const unCompletedNotes = notes.filter((note) => !note.isComplete);
 
   return (
     <div className="stats">
-      <p>Completed: {completedNotes.length}</p>
-      <p>Uncompleted: {unCompletedNotes.length}</p>
+      <p><strong>Completed:</strong> {completedNotes.length}</p>
+      <p><strong>Uncompleted:</strong> {unCompletedNotes.length}</p>
     </div>
   );
 };

@@ -9,8 +9,8 @@ const App = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/notes").then((response) => {
-      setNotes(response.data);
+    axios.get("http://localhost:3001/api/todos").then((response) => {
+      setNotes(response.data.todos);
     });
   });
 

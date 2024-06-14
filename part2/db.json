@@ -8,7 +8,7 @@
     {
       "id": "4222e1ea-fc2f-4ac0-a8fa-e26178fa8f74",
       "content": "another quick note",
-      "completed": true
+      "completed": false
     },
     {
       "id": "e62a1565-59cb-4716-b3e2-a3cb3582e592",
@@ -38,12 +38,12 @@
     {
       "id": "fa4c5c96-50e6-41ae-a5c5-721d3a9dbaed",
       "content": "another one",
-      "completed": false
+      "completed": true
     },
     {
       "id": "aa0c7548-5db3-40ce-b026-54fc8510d5d5",
       "content": "yes it works!",
-      "completed": false
+      "completed": true
     },
     {
       "id": "3ccc39f0-5a92-4de8-a676-1cbcba6de5ce",
@@ -58,12 +58,12 @@
     {
       "id": "219b1725-ad40-43c1-827b-58539aa480ce",
       "content": "where is the error?",
-      "completed": true
+      "completed": false
     },
     {
       "id": "eae7a77c-4ffd-4706-a9a7-4a57718fb2ef",
       "content": "show me the error!",
-      "completed": false
+      "completed": true
     },
     {
       "id": "ab54f6be-bf8d-4980-9038-c8b19d5a4e7b",
@@ -73,12 +73,17 @@
     {
       "id": "33ad6b75-4020-444c-8162-da5384755976",
       "content": "take a nap",
-      "completed": true
+      "completed": false
     },
     {
       "id": "311d3649-7543-4fc2-a598-691a03f149f4",
       "content": "knlkkkl",
       "completed": false
+    },
+    {
+      "id": "33bdda6e-8213-4605-8644-0be353e34f4f",
+      "content": "do some tasks",
+      "completed": true
     }
   ]
 }
