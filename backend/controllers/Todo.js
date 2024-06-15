@@ -1,4 +1,4 @@
-import Todo from "../database/todoSchema.js";
+import Todo from "../models/todoSchema.js";
 
 const createTodo = async (todo) => {
   try {

@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import requestLogger from "./utils/requestLogger.js";
-import Todo from "./database/todoSchema.js";
+import Todo from "./models/todoSchema.js";
 import {
   createTodo,
   getAllTodos,
