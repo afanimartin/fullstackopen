@@ -1,21 +1,15 @@
 import express from "express";
-import cors from "cors";
-import requestLogger from "./utils/requestLogger.js";
-import Todo from "./models/todoSchema.js";
 import {
   createTodo,
   getAllTodos,
   getTodo,
   updateTodo,
   deleteTodo,
-} from "./controllers/TodoController.js";
+} from "../controllers/Todo.js";
 
-const app = express();
-app.use(express.json());
-app.use(requestLogger);
-app.use(cors());
+const todoRouter = express.Router()
 
-app.post("/api/todos", async (req, res) => {
+todoRouter.post("/", async (req, res) => {
   const requestBody = req.body;
   if (requestBody.content.trim() === "" || requestBody.content === undefined) {
     res.status(204).end();
@@ -29,7 +23,7 @@ app.post("/api/todos", async (req, res) => {
   }
 });
 
-app.get("/api/todos", async (req, res) => {
+todoRouter.get("/", async (req, res) => {
   try {
     const todos = await getAllTodos();
     console.log(todos.length);
@@ -42,7 +36,7 @@ app.get("/api/todos", async (req, res) => {
   }
 });
 
-app.get("/api/todos/:id", async (req, res) => {
+todoRouter.get("/:id", async (req, res) => {
   const todoId = req.params.id;
   const foundTodo = await getTodo(todoId);
   if (foundTodo) {
@@ -53,7 +47,7 @@ app.get("/api/todos/:id", async (req, res) => {
   }
 });
 
-app.put("/api/todos/:id", async (req, res) => {
+todoRouter.put("/:id", async (req, res) => {
   const requestBody = req.body;
   const todoId = req.params.id;
 
@@ -69,7 +63,7 @@ app.put("/api/todos/:id", async (req, res) => {
     .end();
 });
 
-app.delete("/api/todos/:id", async (req, res) => {
+todoRouter.delete("/:id", async (req, res) => {
   const todoId = req.params.id;
   await deleteTodo(todoId);
   res
@@ -81,7 +75,4 @@ app.delete("/api/todos/:id", async (req, res) => {
     .end();
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default todoRouter;

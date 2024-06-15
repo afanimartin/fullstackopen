@@ -1,4 +1,4 @@
-import Todo from "../models/todoSchema.js";
+import Todo from "../models/Todo.js";
 
 const createTodo = async (todo) => {
   try {
@@ -34,7 +34,11 @@ const getTodo = async (id) => {
 
 const updateTodo = async (todo) => {
   try {
-    await Todo.findByIdAndUpdate(todo.id, todo, { new: true });
+    await Todo.findByIdAndUpdate(todo.id, todo, {
+      new: true,
+      truerunValidators: true,
+      context: "query",
+    });
   } catch (error) {
     console.log(error);
   }
