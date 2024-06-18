@@ -1,6 +1,5 @@
-import { test, describe } from "node:test";
-import assert from "node:assert";
-
+import Todo from "../src/models/todo.js";
+import { connect, disconnect } from "../src/utils/database.js";
 import {
   createTodo,
   getAllTodos,
@@ -9,11 +8,13 @@ import {
   deleteTodo,
 } from "../src/controllers/Todo.js";
 
-describe("test todo controller", () => {
-  test("create new todo", async () => {
-    await createTodo({content: "this is a new todo item"});
-    const todos = await getAllTodos()
+// beforeAll(async () => connect());
 
-    assert.strictEqual(todos.length, 1);
+describe("test the todo model", () => {
+  test("test ability to create a todo item", async () => {
+    const response = await createTodo({ content: "getting started" });
+    expect(response.status).toBe(200);
   });
 });
+
+// afterAll(async () => disconnect());

@@ -8,15 +8,15 @@ import {
   errorHandler,
 } from "./utils/middleware.js";
 import { info, error } from "./utils/logger.js";
-import { MONGODB_URI } from "./utils/config.js";
+import { config } from "./utils/config.js";
 
 mongoose.set("strictQuery", false);
 
-info("connecting to", MONGODB_URI);
+info("connecting to", config.MONGODB_URI);
 mongoose
-  .connect(MONGODB_URI, { serverSelectionTimeoutMS: 15000 })
+  .connect(config.MONGODB_URI, { serverSelectionTimeoutMS: 15000 })
   .then(() => {
-    console.log(`connected to ${MONGODB_URI}`);
+    console.log(`connected to ${config.MONGODB_URI}`);
   })
   .catch((err) => {
     error("error connecting to MongoDB:", err.message);
