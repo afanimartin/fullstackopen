@@ -1,25 +1,25 @@
 import { useState, useEffect } from "react";
-import Notes from "./components/Notes"
-import Form from "./components/Form"
-import Stats from "./components/Stats"
+import Todos from "./components/Todos";
+import Form from "./components/Form";
+import Stats from "./components/Stats";
 
 import axios from "axios";
 
 const App = () => {
-  const [notes, setNotes] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:3001/api/todos").then((response) => {
-      setNotes(response.data.todos);
+      setTodos(response.data);
     });
   });
 
   return (
     <>
       <section className="mainContent">
-        <Stats notes={notes} />
+        <Stats notes={todos} />
         <Form />
-        <Notes notes={notes} />
+        <Todos todos={todos} />
       </section>
     </>
   );

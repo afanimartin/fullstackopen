@@ -1,19 +1,19 @@
 import axios from "axios";
 
-const Note = ({ note }) => {
-  const completeNote = () => {
-    const updatedNote = { ...note, isComplete: !note.isComplete };
-    axios.put(`http://localhost:3001/api/todos/${note.id}`, updatedNote);
+const Todo = ({ todo }) => {
+  const completeTodo = () => {
+    const updatedTodo = { ...todo, isComplete: !todo.isComplete };
+    axios.put(`http://localhost:3001/api/todos/${todo.id}`, updatedTodo);
   };
 
   return (
     <div className="note">
       {/* <input type="checkbox" onClick={handleCheckboxPress} /> */}
       <li
-        style={{ textDecoration: note.isComplete ? "line-through" : "none" }}
-        onClick={completeNote}
+        style={{ textDecoration: todo.isComplete ? "line-through" : "none" }}
+        onClick={completeTodo}
       >
-        {note.content}
+        {todo.content}
       </li>
       {/* <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -41,4 +41,4 @@ const Note = ({ note }) => {
   );
 };
 
-export default Note;
+export default Todo;
